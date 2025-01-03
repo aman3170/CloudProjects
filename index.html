@@ -1,24 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darshak</title>
+    <title>Darshak - Object Recognition and Translation</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1321.0.min.js"></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>Darshak</h1>
-    <input type="file" id="image-input" accept="image/*">
-    <button id="recognize-button">Recognize Objects</button>
-    <div id="result-container">
-        <h2 id="recognized-objects"></h2>
-        <p id="translated-text"></p>
-        <button id="play-audio-button">Play Audio</button>
-        <audio id="audio-element" src=""></audio>
-    </div>
+    <header>
+        <h1>Darshak</h1>
+        <p>Recognize objects, translate into Hindi, and hear them aloud!</p>
+    </header>
 
-    <script src="(link unavailable)"></script>
-    <script src="script.js"></script>
+    <main>
+        <section id="upload-section">
+            <h2>Upload an Image</h2>
+            <input type="file" id="image-upload" accept="image/*">
+            <button id="analyze-button">Analyze Image</button>
+        </section>
+
+        <section id="results-section">
+            <h2>Results</h2>
+            <div id="image-preview"></div>
+            <p id="recognized-objects"></p>
+            <p id="translated-text"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Darshak. Powered by AWS.</p>
+    </footer>
 </body>
 </html>
