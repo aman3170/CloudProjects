@@ -29,6 +29,21 @@
         #image-upload {
             display: none;
         }
+
+        /* Thumbnail preview style */
+        #image-preview {
+            margin-top: 20px;
+            max-width: 150px;
+            max-height: 150px;
+            overflow: hidden;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+        }
+
+        #image-preview img {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -48,6 +63,7 @@
 
         <section id="results-section">
             <h2>Results</h2>
+            <!-- Thumbnail preview of the uploaded image -->
             <div id="image-preview"></div>
             <p id="recognized-objects"></p>
             <p id="translated-text"></p>
@@ -57,5 +73,23 @@
     <footer>
         <p>&copy; 2025 Darshak.<br>Made by Aman Patel.<br>Powered by AWS.</p>
     </footer>
+
+    <script>
+        // JavaScript to handle image preview
+        document.getElementById('image-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = e.target.result;
+                    const previewContainer = document.getElementById('image-preview');
+                    previewContainer.innerHTML = ''; // Clear previous thumbnail
+                    previewContainer.appendChild(imgElement); // Show new thumbnail
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
