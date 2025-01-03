@@ -3,7 +3,7 @@
 // AWS configuration
 AWS.config.region = 'us-east-1'; // Update with your region
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'us-east-1:example-pool-id', // Replace with your Identity Pool ID
+    IdentityPoolId: 'us-east-1:6857f9de-b2d3-40b3-8f75-b8e3e25c0c44', // Replace with your Identity Pool ID
 });
 
 const rekognition = new AWS.Rekognition();
